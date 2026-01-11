@@ -12,17 +12,19 @@
     "typescript",
     "node",
     "frontend",
-    "ci"
+    "ci",
+    "infrastructure"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Vikash Kumar",
   "license": "MIT",
-  "homepage": "https://github.com/your-username/secure-config-validator",
+
+  "homepage": "https://github.com/<your-username>/secure-config-validator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/secure-config-validator.git"
+    "url": "https://github.com/<your-username>/secure-config-validator.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/secure-config-validator/issues"
+    "url": "https://github.com/<your-username>/secure-config-validator/issues"
   },
 
   "type": "module",
@@ -43,20 +45,22 @@
     "dist"
   ],
 
-  "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build",
-    "lint": "eslint .",
-    "test": "echo \"No tests yet\""
-  },
-
   "sideEffects": false,
+
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test"
+  },
 
   "engines": {
     "node": ">=16"
   },
 
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
   }
 }
