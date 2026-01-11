@@ -1,0 +1,62 @@
+{
+  "name": "secure-config-validator",
+  "version": "0.1.0",
+  "description": "Fail-fast, type-safe, security-aware configuration validation for Node.js and frontend apps",
+  "keywords": [
+    "env",
+    "environment",
+    "config",
+    "validation",
+    "security",
+    "dotenv",
+    "typescript",
+    "node",
+    "frontend",
+    "ci"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/your-username/secure-config-validator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/secure-config-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/secure-config-validator/issues"
+  },
+
+  "type": "module",
+
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+
+  "files": [
+    "dist"
+  ],
+
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint .",
+    "test": "echo \"No tests yet\""
+  },
+
+  "sideEffects": false,
+
+  "engines": {
+    "node": ">=16"
+  },
+
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
